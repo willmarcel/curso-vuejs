@@ -1,0 +1,27 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{ titulo }}</p>
+    <p>{{ saudacao() }}</p>
+    <a v-bind:href="link">Google</a>
+    <hr>
+    <h1>Diretivas</h1>
+    <p>É uma propriedade não html que permite adicionar novas propriedades</p>    
+    <div dev-bind="abc">Dev-Bind</div>
+</div>
+
+<script>
+    new Vue({
+        el:'#app',
+        data: {
+            titulo: 'Usando VueJS - DOM',
+            link: 'http://google.com.br'
+        },
+        methods: {
+            saudacao: function(){
+                console.log(this)                
+                return this.titulo
+            }            
+        }        
+    })
+</script>
