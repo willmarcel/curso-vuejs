@@ -11,7 +11,7 @@ new Vue({
             return this.idade * 3
         },
         randomico: function() {
-            return Math.floor(Math.random() * 2);
+            return Math.random()
         }        
     }
 })
