@@ -1,0 +1,40 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <h1>On-Click</h1>
+    <p>{{ contador }}</p>
+    <button v-on:click="somar">Somar 1</button>
+    <hr>
+    <h1>Mouse Move</h1>
+    <p v-on:mousemove="atualizarXY">Mouse: {{ x }} e {{ y }}</p>
+    <hr>
+    Atribuindo Valor para somar
+    <p>{{ contadorDois }}</p>
+    <button v-on:click="somarValor(5, $event)">Somar(5)</button>
+
+</div>
+
+<script>
+    new Vue({
+        el:'#app',
+        data: {
+            contador: 0,
+            x: 0,
+            y: 0,
+            contadorDois: 0
+        },
+        methods: {
+            somar() {
+                this.contador++
+            },
+            atualizarXY(event) {
+                this.x = event.clientX
+                this.y = event.clientY
+            },
+            somarValor(passo, event) {
+                this.contadorDois += passo
+                console.log(passo, event)                
+            },
+        }        
+    })
+</script>
