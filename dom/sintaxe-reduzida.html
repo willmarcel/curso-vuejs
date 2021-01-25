@@ -1,0 +1,26 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">    
+    <h1>Sintaxe Reduzida</h1>
+    <p>O 'v-on' é trocado pelo '@'</p>
+    <p>O 'v-bind' é trocado pelo ':'</p>
+    <hr>
+    <p>{{ contador }}</p>
+    <button @click="somar">Somar 1</button>
+    <hr>
+    <input type="text" :value="contador">
+</div>
+
+<script>
+    new Vue({
+        el:'#app',
+        data: {
+            contador: 0
+        },
+        methods: {
+            somar() {
+                this.contador++
+            }            
+        }        
+    })
+</script>
